@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Address Dock Search</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./css/index.css">
+  <link rel="" href="./js/index.js">
+</head>
+<body>
+  <div class="container">
+    <h1>Address Dock Search</h1>
+    <p class="description">
+      Search addresses from the Address-Dock API by city, state, or postal code.
+    </p>
+
+    <form id="search-form">
+      <div>
+        <label for="field">Search by</label>
+        <select id="field" name="field">
+          <option value="city">City</option>
+          <option value="state">State</option>
+          <option value="zipcode">Zip Code</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="query">Value</label>
+        <input
+          type="text"
+          id="query"
+          name="query"
+          placeholder="e.g., Rochester"
+          required
+        />
+      </div>
+
+      <button type="submit">Search</button>
+    </form>
+
+    <div id="status"></div>
+
+    <table id="results-table" class="hidden">
+      <thead></thead>
+      <tbody></tbody>
+    </table>
+  </div>
+
+  <script src="./js/index.js"></script> 
+
+</body>
+</html>

@@ -5,6 +5,9 @@ import createHttpError from 'http-errors';
 import router from './router';
 import loggerService from './services/logger.service';
 
+import path from "path";
+
+
 const app = express();
 app.disable("x-powered-by")
 app.use(cors())
@@ -21,6 +24,7 @@ app.get("/health", (_, res) => {
 })
 
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "..", "public")));
 app.use('*', router);
 
 app.use(async (req, res: Response, next: NextFunction) => {
